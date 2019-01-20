@@ -1,0 +1,47 @@
+.slide {
+  position: relative;
+  width: 44px;
+  height: 20px;
+  border: 1px solid #aaa;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide__dot {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  width: 16px;
+  height: 16px;
+  background-color: #555;
+  transition: all .2s;
+}
+
+.slide--on .slide__dot {
+  transform: translate3d(24px, 0, 0);
+}
+
+.slide--pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #555;
+  animation-name: swt-pulse;
+  animation-duration: 600ms;
+  animation-fill-mode: forwards;
+  transform-origin: center center;
+}
+
+@keyframes swt-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}

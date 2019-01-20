@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    .testd {
+      height: 200vh;
+    }
+  </style>
+</head>
+
+<body>
+  <button>SHOW</button>
+  <div class="testd"></div>
+  <script src="../src/datetime-picker.js"></script>
+  <script>
+    datetimePicker.create(undefined, 'bottom');
+    document.querySelector('button').addEventListener('click', function () {
+      datetimePicker.show();
+    }, false);
+  </script>
+</body>
+
+</html>

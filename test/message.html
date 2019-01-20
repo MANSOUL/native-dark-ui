@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Message</title>
+  <link rel="stylesheet" href="../css/message.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    html,
+    body {
+      height: 100%;
+      font-family: sans-serif;
+    }
+
+    .testd {
+      height: 200vh;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="toast">SHOW TOAST</button>
+  <button class="confirm">SHOW CONFIRM</button>
+  <div class="testd"></div>
+  <script src="../src/message.js"></script>
+  <script>
+    document.querySelector('button.toast').addEventListener('click', function handleButtonClick(argument) {
+      message.toast('Hello World')
+    })
+
+    document.querySelector('button.confirm').addEventListener('click', function handleButtonClick(argument) {
+      message.confirm('Hello World')
+    })
+  </script>
+</body>
+
+</html>

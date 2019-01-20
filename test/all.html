@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Button</title>
+  <link rel="stylesheet" href="../css/button.css">
+  <link rel="stylesheet" href="../css/swiper.css">
+  <link rel="stylesheet" href="../css/gallary.css">
+  <link rel="stylesheet" href="../css/input.css">
+  <link rel="stylesheet" href="../css/radio.css">
+  <link rel="stylesheet" href="../css/message.css">
+  <link rel="stylesheet" href="../css/switcher.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+
+    :root {
+      --primary-color: #333;
+      --disable-color: #aaa;
+      --pulse-color: #555;
+    }
+
+    body {
+      padding: 20px;
+      font-family: sans-serif;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- swiper -->
+  <div class="slider slider1">
+    <ul class="slider__container">
+      <li class="slider__item"></li>
+      <li class="slider__item"></li>
+      <li class="slider__item"></li>
+    </ul>
+    <ul class="slider__pagination">
+    </ul>
+  </div>
+
+  <br>
+  <br>
+  <!-- gallary -->
+  <button id="show-gallary">SHOW GALLARY</button>
+  <div class="img-layer">
+    <div class="img-layer__bg"></div>
+    <div class="img-layer__slider">
+      <!-- contents -->
+      <div class="slider img-layer__slider">
+        <ul class="slider__container">
+          <li class="slider__item">
+            <img src="../images/1.jpeg">
+          </li>
+          <li class="slider__item">
+            <img src="../images/2.jpeg">
+          </li>
+          <li class="slider__item">
+            <img src="../images/3.jpeg">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!-- button -->
+  <a class="button" href="javascript:void(0);" id="button1">
+    <span class="button__content">button</span>
+  </a>
+  <br>
+  <br>
+  <a class="button button--disable" href="javascript:void(0);" id="button2">
+    <span class="button__content">diable</span>
+  </a>
+
+  <br>
+  <br>
+  <!-- datetime-picker -->
+  <button id="show-dtpicker">SHOW DT-Picker</button>
+
+  <br>
+  <br>
+  <!-- input -->
+  <div class="input" id="input-name">
+    <input id="input_1" class="input__field"></input>
+    <label class="input__label" for="input_1">name</label>
+  </div>
+
+  <br>
+  <br>
+  <!-- radio -->
+  <div class="radio__group radio__group--vertical" id="g1">
+    <div class="radio__item radio__item--check" data-value="apple">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Apple</span>
+    </div>
+    <div class="radio__item" data-value="orange">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Orange</span>
+    </div>
+    <div class="radio__item" data-value="banana">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Banana</span>
+    </div>
+  </div>
+  <div class="radio__group" id="g2">
+    <div class="radio__item" data-value="apple">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Apple</span>
+    </div>
+    <div class="radio__item radio__item--check" data-value="orange">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Orange</span>
+    </div>
+    <div class="radio__item" data-value="banana">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Banana</span>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <!-- switcher -->
+  <div class="slide" id="slide1">
+    <div class="slide__dot"></div>
+  </div>
+  <p style="margin: 10px;"></p>
+  <div class="slide" id="slide2">
+    <div class="slide__dot"></div>
+  </div>
+  
+  <br>
+  <br>
+  <!-- message -->
+  <button class="toast">SHOW TOAST</button>
+  <button class="confirm">SHOW CONFIRM</button>
+
+  <script src="../src/common.js"></script>
+  <script src="../src/button.js"></script>
+  <script src="../src/datetime-picker.js"></script>
+  <script src="../src/swiper.js"></script>
+  <script src="../src/gallary.js"></script>
+  <script src="../src/input.js"></script>
+  <script src="../src/radio.js"></script>
+  <script src="../src/message.js"></script>
+  <script src="../src/switcher.js"></script>
+
+
+  <script>
+    // button
+    function setTheme(primaryColor = '#333', disableColor = '#aaa', pluseColor = '#555') {
+      let $rootEl = document.documentElement;
+      $rootEl.style.setProperty('--primary-color', primaryColor);
+      $rootEl.style.setProperty('--disable-color', disableColor);
+      $rootEl.style.setProperty('--pulse-color', pluseColor);
+    }
+    button('#button1').on(function (e) {
+      console.log('clicked: ', e);
+    });
+    button('#button2').on(function (e) {
+      console.log('clicked: ', e);
+    });
+
+    // datetime picker
+    datetimePicker.create(undefined, 'bottom');
+    document.querySelector('#show-dtpicker').addEventListener('click', function () {
+      datetimePicker.show();
+    }, false);
+
+    // swiper
+    const swiper = new Swiper({
+      onCreate: (index) => {
+      // console.log(index)
+      },
+      selector: '.slider1'
+    });
+    swiper.on((index) => {
+    // console.log(index)
+    });
+
+    // gallary
+    const oGallary = gallary(['../images/1.jpeg', '../images/2.jpeg', '../images/3.jpeg']);
+    document.querySelector('#show-gallary').onclick = function handleToggleGallary(){
+      oGallary.toggle();
+    }
+
+    // input
+    const inputName = new Input({
+      selector: '#input-name'
+    });
+
+    // radio
+    let r = radio('#g1', true);
+    let us = r.on(function (value) {
+      console.log(value)
+    });
+    // us()
+    let r2 = radio('#g2');
+    r2.on(function (value) {
+      console.log(value)
+    });
+
+    // message
+    document.querySelector('button.toast').addEventListener('click', function handleButtonClick(argument) {
+      message.toast('Hello World')
+    });
+
+    document.querySelector('button.confirm').addEventListener('click', function handleButtonClick(argument) {
+      message.confirm('Hello World')
+    });
+
+    // switcher
+    switcher('#slide1').on(function (v) {
+      console.log('slide1: ', v);
+    });
+
+    switcher('#slide2').on(function (v) {
+      console.log('slide2', v);
+    });
+  </script>
+</body>
+
+</html>

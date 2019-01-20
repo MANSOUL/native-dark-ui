@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/radio.css">
+</head>
+
+<body>
+  <div class="radio__group radio__group--vertical" id="g1">
+    <div class="radio__item radio__item--check" data-value="apple">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Apple</span>
+    </div>
+    <div class="radio__item" data-value="orange">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Orange</span>
+    </div>
+    <div class="radio__item" data-value="banana">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Banana</span>
+    </div>
+  </div>
+  <div class="radio__group" id="g2">
+    <div class="radio__item" data-value="apple">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Apple</span>
+    </div>
+    <div class="radio__item radio__item--check" data-value="orange">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Orange</span>
+    </div>
+    <div class="radio__item" data-value="banana">
+      <span class="radio__item-box"></span>
+      <span class="radio__item-value">Banana</span>
+    </div>
+  </div>
+  <script src="../src/common.js"></script>
+  <script src="../src/radio.js"></script>
+  <script>
+    let r = radio('#g1', true);
+    let us = r.on(function (value) {
+      console.log(value)
+    });
+    // us()
+
+    let r2 = radio('#g2');
+    r2.on(function (value) {
+      console.log(value)
+    });
+  </script>
+</body>
+
+</html>

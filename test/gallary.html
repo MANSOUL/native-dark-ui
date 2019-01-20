@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Image Layer</title>
+  <link rel="stylesheet" href="../css/swiper.css">
+  <link rel="stylesheet" href="../css/gallary.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <button>show</button>
+  <div class="img-layer">
+    <div class="img-layer__bg"></div>
+    <div class="img-layer__slider">
+      <!-- contents -->
+      <div class="slider">
+        <ul class="slider__container">
+          <li class="slider__item">
+            <img src="../images/1.jpeg">
+          </li>
+          <li class="slider__item">
+              <img src="../images/2.jpeg">
+            </li>
+            <li class="slider__item">
+              <img src="../images/3.jpeg">
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="../src/common.js"></script>
+  <script src="../src/swiper.js"></script>
+  <script src="../src/gallary.js"></script>
+  <script>
+    const mGallary = gallary(['../images/1.jpeg', '../images/2.jpeg', '../images/3.jpeg']);
+    document.querySelector('button').onclick = function handleButtonClick() {
+      mGallary.toggle();
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Slide</title>
+  <link rel="stylesheet" href="../css/switcher.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      padding: 20px;
+      font-family: sans-serif;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="slide" id="slide1">
+    <div class="slide__dot"></div>
+  </div>
+  <p style="margin: 10px;"></p>
+  <div class="slide" id="slide2">
+    <div class="slide__dot"></div>
+  </div>
+  <script src="../src/common.js"></script>
+  <script src="../src/switcher.js"></script>
+  <script>
+    switcher('#slide1').on(function (v) {
+      console.log('slide1: ', v);
+    });
+
+    switcher('#slide2').on(function (v) {
+      console.log('slide2', v);
+    });
+  </script>
+</body>
+
+</html>

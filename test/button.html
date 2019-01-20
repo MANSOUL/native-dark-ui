@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Button</title>
+  <link rel="stylesheet" href="../css/button.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary-color: #333;
+      --disable-color: #aaa;
+      --pulse-color: #555;
+    }
+
+    body {
+      padding: 20px;
+      font-family: sans-serif;
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="button" href="javascript:void(0);" id="button1">
+    <span class="button__content">button</span>
+  </a>
+  <p>&nbsp;</p>
+  <a class="button button--disable" href="javascript:void(0);" id="button2">
+    <span class="button__content">diable</span>
+  </a>
+  <script src="../src/common.js"></script>
+  <script src="../src/button.js"></script>
+  <script>
+    function setTheme(primaryColor = '#333', disableColor = '#aaa', pluseColor = '#555') {
+      let $rootEl = document.documentElement;
+      $rootEl.style.setProperty('--primary-color', primaryColor);
+      $rootEl.style.setProperty('--disable-color', disableColor);
+      $rootEl.style.setProperty('--pulse-color', pluseColor);
+    }
+
+    button('#button1').on(function (e) {
+      console.log('clicked: ', e);
+    });
+
+    button('#button2').on(function (e) {
+      console.log('clicked: ', e);
+    });
+
+    // setTheme('#f18080', undefined, '#f18080');
+  </script>
+</body>
+
+</html>

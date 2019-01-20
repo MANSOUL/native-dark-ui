@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/swiper.css">
+</head>
+
+<body>
+  <div class="slider slider1">
+    <ul class="slider__container">
+      <li class="slider__item"></li>
+      <li class="slider__item"></li>
+      <li class="slider__item"></li>
+    </ul>
+    <ul class="slider__pagination">
+    </ul>
+  </div>
+  <script src="../src/swiper.js"></script>
+  <script>
+    const swiper = new Swiper({
+      onCreate: (index) => {
+        // console.log(index)
+      },
+      selector: '.slider1'
+    });
+    swiper.on((index) => {
+      // console.log(index)
+    });
+  </script>
+</body>
+
+</html>
